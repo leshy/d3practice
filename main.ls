@@ -1,13 +1,11 @@
 require! {
   'd3-browserify': d3
-  'zepto-browserify': zepto
-  underscore: _
-  
+  'zepto-browserify': { $ }
+  underscore: _  
 }
 
-$ = zepto.$
 
-start = ->
+$('document').ready ->
   console.log d3
 
   circle = d3.selectAll("circle");
@@ -27,4 +25,3 @@ start = ->
       .style("width", (d) -> d * 10 + "px")
       .text((d) -> d)
 
-$('document').ready start
